@@ -29,16 +29,7 @@ import json
 from pathlib import Path
 
 # Text splitter  (import path changed between LangChain versions)
-try:
-    from langchain_text_splitters import RecursiveCharacterTextSplitter
-except ImportError:
-    try:
-        from langchain.text_splitter import RecursiveCharacterTextSplitter
-    except ImportError:
-        raise ImportError(
-            "RecursiveCharacterTextSplitter not found.\n"
-            "Install with:  pip install langchain-text-splitters"
-        )
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # OllamaEmbeddings  (moved to langchain_ollama in newer releases)
 try:
@@ -53,10 +44,7 @@ except ImportError:
         )
 
 # Document schema  (moved to langchain_core in newer releases)
-try:
-    from langchain_core.documents import Document
-except ImportError:
-    from langchain.schema import Document
+from langchain_core.documents import Document
 
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores     import FAISS
