@@ -66,7 +66,7 @@ from langchain_ollama                     import OllamaLLM
 # Shared instances
 # Chunk size 800 / overlap 100 preserved exactly as requested.
 llm        = OllamaLLM(model="llama3:8b", temperature=0)
-embeddings = OllamaEmbeddings(model="nomic-embed-text")
+embeddings = OllamaEmbeddings(model="llama3:8b")
 splitter   = RecursiveCharacterTextSplitter(chunk_size=800, chunk_overlap=100)
 
 # PDF loading
